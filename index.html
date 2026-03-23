@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Prathmesh | Video Editor Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css"/>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+</head>
+<body>
+
+  <!-- Grain overlay -->
+  <div class="grain"></div>
+
+  <!--
+    HERO BACKGROUND VIDEO
+    ─────────────────────────────────────────────────────────────────
+    Replaced local MP4 with a YouTube iframe (autoplay, muted, loop).
+    The ?playlist= param is required for looping to work on YouTube.
+    Replace m1XLY2Ngb_A with your own showreel YouTube video ID.
+  -->
+  <div class="hero-bg-video">
+    <iframe
+      src="https://www.youtube.com/embed/m1XLY2Ngb_A?autoplay=1&mute=1&loop=1&playlist=m1XLY2Ngb_A&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen
+    ></iframe>
+  </div>
+  <div class="hero-bg-overlay"></div>
+
+  <!-- NAVBAR -->
+  <header class="nav">
+    <div class="nav-logo">
+      <span></span>
+      PRATHMESH / EDITOR
+    </div>
+    <nav class="nav-links" id="navLinks">
+      <a href="#hero">Intro</a>
+      <a href="#showreel">Showreel</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#skills">Skills</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-toggle" id="navToggle">
+      <span></span><span></span><span></span>
+    </div>
+  </header>
+
+  <!-- HERO / CINEMATIC INTRO -->
+  <section class="hero" id="hero">
+    <div class="hero-left fade-in">
+      <div class="hero-top-tag">
+        <div class="hero-top-tag-dot"></div>
+        Editing Studio Interface · Portfolio
+      </div>
+      <h1 class="hero-name">Prathmesh</h1>
+      <div class="hero-role">Video Editor — Reels, Event Edits &amp; Wedding Films</div>
+      <p class="hero-intro">
+        I turn raw footage into engaging visual stories — from high-energy reels to cinematic event highlights.
+      </p>
+      <div class="hero-ctas">
+        <a href="#showreel" class="btn-primary">
+          View Work
+          <span>▶</span>
+        </a>
+        <a href="#contact" class="btn-secondary">
+          Contact
+        </a>
+      </div>
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <div class="hero-meta-dot"></div>
+          Focused on pacing & storytelling
+        </div>
+        <div class="hero-meta-item">
+          <div class="hero-meta-dot"></div>
+          Reels · Events · Weddings · Travel · YouTube
+        </div>
+      </div>
+    </div>
+
+    <!-- Right side: stylized editing console -->
+    <div class="hero-right fade-in delay-2">
+      <div class="hero-edit-console">
+        <div class="hero-console-topbar">
+          <div class="hero-console-dots">
+            <div class="hero-console-dot"></div>
+            <div class="hero-console-dot"></div>
+            <div class="hero-console-dot"></div>
+          </div>
+          <div>Studio Timeline · 01:12:08:13</div>
+        </div>
+        <div class="hero-console-main">
+          <div class="hero-preview">
+            <!--
+              CONSOLE PREVIEW PANEL
+              ─────────────────────────────────────────────────────────
+              Replaced local MP4 with a YouTube iframe (muted, looped).
+              Replace m1XLY2Ngb_A with your actual preview clip YouTube ID.
+            -->
+            <iframe
+              src="https://www.youtube.com/embed/m1XLY2Ngb_A?autoplay=1&mute=1&loop=1&playlist=m1XLY2Ngb_A&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1"
+              frameborder="0"
+              allow="autoplay; encrypted-media"
+              allowfullscreen
+              style="width:100%;height:100%;border:none;position:absolute;top:0;left:0;"
+            ></iframe>
+            <div class="hero-preview-gradient"></div>
+            <div class="hero-preview-label">
+              <span></span> Active Sequence: <strong style="font-weight:500;">Showreel</strong>
+            </div>
+          </div>
+          <div class="hero-timeline">
+            <div class="hero-timeline-header">
+              <span>Sequence 01 — Main</span>
+              <span>1080p · 25fps · Color Graded</span>
+            </div>
+            <div class="hero-timeline-track">
+              <div class="hero-timeline-clip"></div>
+              <div class="hero-timeline-cursor"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOWREEL SECTION -->
+  <section class="section" id="showreel">
+    <div class="section-label fade-in">Showreel</div>
+    <h2 class="section-title fade-in delay-1">Featured Edit &amp; Categories</h2>
+
+    <div class="showreel-grid">
+
+      <!--
+        MAIN SHOWREEL CARD
+        ─────────────────────────────────────────────────────────────────
+        data-video      = YouTube video ID  (replace m1XLY2Ngb_A)
+        data-orientation= "landscape" (16:9) or "vertical" (9:16)
+        Thumbnail source: https://img.youtube.com/vi/VIDEO_ID/hqdefault.jpg
+      -->
+      <div class="showreel-main fade-in delay-1"
+           data-video="m1XLY2Ngb_A"
+           data-orientation="landscape">
+        <div class="showreel-main-label">
+          <div>Primary Showreel</div>
+          <span>Click to preview</span>
+        </div>
+        <div class="showreel-video-wrapper"
+             onclick="openVideoModal(this.parentElement.dataset.video, this.parentElement.dataset.orientation)">
+          <!-- YouTube thumbnail used as the static preview image -->
+          <img
+            src="https://img.youtube.com/vi/m1XLY2Ngb_A/hqdefault.jpg"
+            alt="Primary Showreel Thumbnail"
+            style="width:100%;height:100%;object-fit:cover;display:block;"
+          />
+          <div class="showreel-overlay">
+            <div class="showreel-play">
+              <svg width="22" height="22" viewBox="0 0 24 24">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="showreel-caption">
+          <div>
+            A fast-paced cut of reels, event highlights, wedding teasers and travel visuals – edited with cinematic pacing and color.
+          </div>
+          <span>01:20 · Multi-Genre</span>
+        </div>
+      </div>
+
+      <!-- Category cards -->
+      <div class="showreel-categories fade-in delay-2">
+
+        <!--
+          INSTAGRAM REELS CARD
+          Replace m1XLY2Ngb_A with the correct YouTube ID for this clip.
+        -->
+        <div class="showreel-card"
+             data-video="m1XLY2Ngb_A"
+             data-orientation="vertical"
+             onclick="openVideoModal(this.dataset.video, this.dataset.orientation)">
+          <div class="showreel-thumb">
+            <img
+              src="https://img.youtube.com/vi/m1XLY2Ngb_A/hqdefault.jpg"
+              alt="Instagram Reels Thumbnail"
+              style="width:100%;height:100%;object-fit:cover;display:block;"
+            />
+          </div>
+          <div class="showreel-card-main">
+            <div class="showreel-card-title">Instagram Reels</div>
+            <div class="showreel-card-desc">High-energy edits cut to music, hooks in the first seconds.</div>
+            <div class="showreel-card-meta">
+              <span>0:20–0:40</span>
+              <span>Vertical · Social</span>
+            </div>
+          </div>
+        </div>
+
+        <!--
+          EVENT HIGHLIGHTS CARD
+          Replace m1XLY2Ngb_A with the correct YouTube ID for this clip.
+        -->
+        <div class="showreel-card"
+             data-video="m1XLY2Ngb_A"
+             data-orientation="vertical"
+             onclick="openVideoModal(this.dataset.video, this.dataset.orientation)">
+          <div class="showreel-thumb">
+            <img
+              src="https://img.youtube.com/vi/m1XLY2Ngb_A/hqdefault.jpg"
+              alt="Event Highlights Thumbnail"
+              style="width:100%;height:100%;object-fit:cover;display:block;"
+            />
+          </div>
+          <div class="showreel-card-main">
+            <div class="showreel-card-title">Event Highlights</div>
+            <div class="showreel-card-desc">Capturing atmosphere, crowd energy and key moments.</div>
+            <div class="showreel-card-meta">
+              <span>1–3 min</span>
+              <span>Recap · Corporate · Social</span>
+            </div>
+          </div>
+        </div>
+
+        <!--
+          WEDDING HIGHLIGHTS CARD
+          Replace m1XLY2Ngb_A with the correct YouTube ID for this clip.
+        -->
+        <div class="showreel-card"
+             data-video="m1XLY2Ngb_A"
+             data-orientation="landscape"
+             onclick="openVideoModal(this.dataset.video, this.dataset.orientation)">
+          <div class="showreel-thumb">
+            <img
+              src="https://img.youtube.com/vi/m1XLY2Ngb_A/hqdefault.jpg"
+              alt="Wedding Highlights Thumbnail"
+              style="width:100%;height:100%;object-fit:cover;display:block;"
+            />
+          </div>
+          <div class="showreel-card-main">
+            <div class="showreel-card-title">Wedding Highlights</div>
+            <div class="showreel-card-desc">Emotional, cinematic storytelling of each couple's day.</div>
+            <div class="showreel-card-meta">
+              <span>0:45–2:00</span>
+              <span>Emotional · Cinematic</span>
+            </div>
+          </div>
+        </div>
+
+        <!--
+          TRAVEL EDITS CARD
+          Replace m1XLY2Ngb_A with the correct YouTube ID for this clip.
+        -->
+        <div class="showreel-card"
+             data-video="m1XLY2Ngb_A"
+             data-orientation="vertical"
+             onclick="openVideoModal(this.dataset.video, this.dataset.orientation)">
+          <div class="showreel-thumb">
+            <img
+              src="https://img.youtube.com/vi/m1XLY2Ngb_A/hqdefault.jpg"
+              alt="Travel Edits Thumbnail"
+              style="width:100%;height:100%;object-fit:cover;display:block;"
+            />
+          </div>
+          <div class="showreel-card-main">
+            <div class="showreel-card-title">Travel Edits</div>
+            <div class="showreel-card-desc">Rhythmic cuts, landscapes, and movement-heavy visuals.</div>
+            <div class="showreel-card-meta">
+              <span>0:45–1:30</span>
+              <span>Adventure · Montage</span>
+            </div>
+          </div>
+        </div>
+
+        <!--
+          LONG-FORM / YOUTUBE CARD
+          Replace m1XLY2Ngb_A with the correct YouTube ID for this clip.
+        -->
+        <div class="showreel-card"
+             data-video="m1XLY2Ngb_A"
+             data-orientation="landscape"
+             onclick="openVideoModal(this.dataset.video, this.dataset.orientation)">
+          <div class="showreel-thumb">
+            <img
+              src="https://img.youtube.com/vi/m1XLY2Ngb_A/hqdefault.jpg"
+              alt="Long-form YouTube Thumbnail"
+              style="width:100%;height:100%;object-fit:cover;display:block;"
+            />
+          </div>
+          <div class="showreel-card-main">
+            <div class="showreel-card-title">Long-form / YouTube</div>
+            <div class="showreel-card-desc">Narrative edits, interviews, vlogs and documentary-style cuts.</div>
+            <div class="showreel-card-meta">
+              <span>5–20 min</span>
+              <span>Story · Structure</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EDITING TIMELINE SECTION -->
+  <section class="section" id="timeline">
+    <div class="section-label fade-in">Timeline</div>
+    <h2 class="section-title fade-in delay-1">Projects on the Editing Timeline</h2>
+
+    <div class="timeline-shell fade-in delay-2">
+      <div class="timeline-header">
+        <div>Sequence: CLIENT_MASTER_SEQUENCE.prproj</div>
+        <div>00:00:00:00 — 00:05:00:00</div>
+      </div>
+
+      <div class="timeline-ruler">
+        <div class="timeline-timecodes">
+          <span>00:00</span>
+          <span>01:00</span>
+          <span>02:00</span>
+          <span>03:00</span>
+          <span>04:00</span>
+          <span>05:00</span>
+        </div>
+      </div>
+
+      <div class="timeline-tracks">
+
+        <!-- Track V1 — Event Highlight. Replace m1XLY2Ngb_A with correct YouTube ID. -->
+        <div class="timeline-track-row">
+          <div class="timeline-track-label">V1</div>
+          <div class="timeline-track">
+            <div class="timeline-clip timeline-clip--event"
+                 data-video="m1XLY2Ngb_A"
+                 data-orientation="vertical"
+                 onclick="openVideoModal(this.dataset.video, this.dataset.orientation)">
+              <div class="timeline-clip-title">Event Reel – Crowd Energy</div>
+              <div class="timeline-clip-type">Event Highlight</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Track V2 — Wedding Highlight. Replace m1XLY2Ngb_A with correct YouTube ID. -->
+        <div class="timeline-track-row">
+          <div class="timeline-track-label">V2</div>
+          <div class="timeline-track">
+            <div class="timeline-clip timeline-clip--wedding"
+                 data-video="m1XLY2Ngb_A"
+                 data-orientation="landscape"
+                 onclick="openVideoModal(this.dataset.video, this.dataset.orientation)">
+              <div class="timeline-clip-title">Wedding Highlight – Cinematic Story</div>
+              <div class="timeline-clip-type">Wedding</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Track V3 — Travel Edit. Replace m1XLY2Ngb_A with correct YouTube ID. -->
+        <div class="timeline-track-row">
+          <div class="timeline-track-label">V3</div>
+          <div class="timeline-track">
+            <div class="timeline-clip timeline-clip--travel"
+                 data-video="m1XLY2Ngb_A"
+                 data-orientation="vertical"
+                 onclick="openVideoModal(this.dataset.video, this.dataset.orientation)">
+              <div class="timeline-clip-title">Travel Edit – Coastal Journey</div>
+              <div class="timeline-clip-type">Travel</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Track V4 — Social Reel. Replace m1XLY2Ngb_A with correct YouTube ID. -->
+        <div class="timeline-track-row">
+          <div class="timeline-track-label">V4</div>
+          <div class="timeline-track">
+            <div class="timeline-clip timeline-clip--reel"
+                 data-video="m1XLY2Ngb_A"
+                 data-orientation="vertical"
+                 onclick="openVideoModal(this.dataset.video, this.dataset.orientation)">
+              <div class="timeline-clip-title">Social Media Reel – Beat Sync</div>
+              <div class="timeline-clip-type">Reel</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS / TOOLS — unchanged -->
+  <section class="section" id="skills">
+    <div class="section-label fade-in">Skills &amp; Tools</div>
+    <h2 class="section-title fade-in delay-1">Editing Toolkit</h2>
+
+    <div class="skills-grid">
+      <div class="skills-panel fade-in delay-1">
+        <div class="skills-panel-title">Editing Software</div>
+        <div class="tool-row">
+          <div class="tool-name">
+            <div class="tool-badge badge-pr">Pr</div>
+            <span>Adobe Premiere Pro</span>
+          </div>
+          <div class="tool-meta">Main timeline editing · multi-cam · color</div>
+        </div>
+        <div class="tool-row">
+          <div class="tool-name">
+            <div class="tool-badge badge-ae">Ae</div>
+            <span>Adobe After Effects</span>
+          </div>
+          <div class="tool-meta">Motion graphics · titles · effects</div>
+        </div>
+        <div class="tool-row">
+          <div class="tool-name">
+            <div class="tool-badge badge-cc">Cc</div>
+            <span>CapCut</span>
+          </div>
+          <div class="tool-meta">Quick social-first vertical edits</div>
+        </div>
+        <div class="tool-row">
+          <div class="tool-name">
+            <div class="tool-badge badge-am">Am</div>
+            <span>Alight Motion</span>
+          </div>
+          <div class="tool-meta">Mobile motion design &amp; animation</div>
+        </div>
+      </div>
+
+      <div class="skills-panel fade-in delay-2">
+        <div class="skills-panel-title">Editing Strengths</div>
+        <div style="font-size:0.9rem; color:var(--text-soft); margin-bottom:8px;">
+          Focused on edits that feel smooth, intentional, and story-driven.
+        </div>
+        <div class="skills-tags">
+          <span class="skill-tag">Cinematic editing</span>
+          <span class="skill-tag">Social media reels</span>
+          <span class="skill-tag">Color grading</span>
+          <span class="skill-tag">Motion transitions</span>
+          <span class="skill-tag">Storytelling &amp; pacing</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT & EDUCATION — unchanged -->
+  <section class="section" id="about">
+    <div class="section-label fade-in">About</div>
+    <h2 class="section-title fade-in delay-1">Inside the Edit</h2>
+
+    <div class="about-grid">
+      <div class="about-text fade-in delay-1">
+        <p>
+          I'm a video editor who enjoys turning raw footage into compelling visual content. From fast-paced reels to cinematic event edits, I focus on clean storytelling, smooth transitions, and engaging pacing.
+        </p>
+        <p>
+          I treat each project like a timeline that needs rhythm — building emotion through music, pacing and visual flow.
+        </p>
+        <div class="about-highlight">
+          <span>Reels · Events · Weddings · Travel · YouTube</span>
+          <span>Available for freelance and collaborations</span>
+        </div>
+      </div>
+
+      <div class="fade-in delay-2">
+        <div class="about-card">
+          <div class="about-quote">
+            "A great edit disappears — the viewer only feels the story."
+          </div>
+          <div class="about-quote-sign">"</div>
+          <div class="about-quote-author">Prathmesh — Video Editor</div>
+        </div>
+
+        <div class="edu-card">
+          <div class="edu-icon">AI</div>
+          <div>
+            <div class="edu-label">Education</div>
+            <div class="edu-title">Diploma in Artificial Intelligence &amp; Machine Learning (AI-ML)</div>
+            <div style="font-size:0.82rem; color:var(--text-soft);">
+              Currently pursuing a Polytechnic Diploma in Artificial Intelligence and Machine Learning while developing creative skills in video editing and digital media.
+            </div>
+            <div class="edu-tag">Currently Studying</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT — unchanged -->
+  <section class="section" id="contact">
+    <div class="section-label fade-in">Contact</div>
+    <div class="contact-grid">
+      <div class="contact-heading fade-in delay-1">
+        <h2>Let's create something cinematic.</h2>
+        <p>
+          Have raw footage, an event, or a story that needs editing? Share your idea, and I'll help turn it into a polished, engaging visual piece.
+        </p>
+      </div>
+
+      <div class="contact-links fade-in delay-2">
+        <!-- Email -->
+        <a href="/cdn-cgi/l/email-protection#443d2b3136692129252d2804213c25293428216a272b29" class="contact-link">
+          <div class="contact-icon email">✉</div>
+          <div>
+            <div class="contact-label-main">Email</div>
+            <div class="contact-label-sub"><span class="__cf_email__" data-cfemail="0871677d7a256d65696164486d70696578646d266b6765">[email&#160;protected]</span></div>
+          </div>
+          <div class="contact-arrow">↗</div>
+        </a>
+
+        <!-- Instagram
+        <a href="https://instagram.com/your_instagram" target="_blank" class="contact-link">
+          <div class="contact-icon ig">IG</div>
+          <div>
+            <div class="contact-label-main">Instagram</div>
+            <div class="contact-label-sub">@your_instagram</div>
+          </div>
+          <div class="contact-arrow">↗</div>
+        </a>-->
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/918010337049" target="_blank" class="contact-link">
+          <div class="contact-icon wa">WA</div>
+          <div>
+            <div class="contact-label-main">WhatsApp</div>
+            <div class="contact-label-sub">Chat about a project</div>
+          </div>
+          <div class="contact-arrow">↗</div>
+        </a>
+
+        <!-- Google Drive Portfolio -->
+        <a href="https://drive.google.com/drive/folders/YOUR_DRIVE_PORTFOLIO" target="_blank" class="contact-link">
+          <div class="contact-icon drive">G</div>
+          <div>
+            <div class="contact-label-main">Google Drive Portfolio</div>
+            <div class="contact-label-sub">View full exports and project files</div>
+          </div>
+          <div class="contact-arrow">↗</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER — unchanged -->
+  <footer class="footer">
+    <span>© <span id="year"></span> Prathmesh — Video Editor.</span>
+    <span>Designed like an editing studio · Built for moving images.</span>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════════════════
+       VIDEO MODAL
+       ────────────────────────────────────────────────────────
+       CHANGED: replaced <video> tag with a YouTube <iframe>.
+       - src is empty on page load (no loading until user clicks)
+       - openVideoModal() injects the YouTube embed URL with autoplay
+       - closeVideoModal() clears src to stop the video instantly
+  ════════════════════════════════════════════════════════ -->
+  <div id="videoModal" class="video-modal">
+    <!-- Close button positioned top-right, outside the inner box -->
+    <div id="videoModalClose" class="video-modal-close">✕</div>
+    <div class="video-modal-inner" id="videoModalInner">
+      <iframe
+        id="modalVideo"
+        src="m1XLY2Ngb_A"
+        frameborder="0"
+        allow="autoplay; encrypted-media; fullscreen"
+        allowfullscreen
+        style="width:100%;height:100%;border:none;display:block;"
+      ></iframe>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
